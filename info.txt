@@ -1,0 +1,7 @@
+No Ubuntu, executar:
+sudo apt install libmysqlclient.dev python3-dev
+
+No Mac, executar:
+brew install mysql-connector-c
+
+No Windows, se MySQL já estiver instalado, as libs estarão instaladas.

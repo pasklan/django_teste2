@@ -1,0 +1,33 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CONTATO</title>
+    {% bootstrap_css %}
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contato</h1>
+      {% bootstrap_messages %}
+
+      <form action="{% url 'contato' %}" method="post" class="form" autocomplete="off">
+        {% comment %} Segurança contra roubo de dados em formulários {% endcomment %}
+        {% csrf_token %} 
+        {% comment %} Aplica o CSS do bootstrap no formulario {% endcomment %}
+        {% bootstrap_form form %}
+        
+        {% buttons %}
+          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+        {% endbuttons %}
+
+      </form>
+    </div>
+
+    <script src="" async defer></script>
+    {% bootstrap_javascript jquery='full' %}
+  </body>
+</html>
